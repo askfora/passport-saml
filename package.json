@@ -33,7 +33,7 @@
     "xml-crypto": "^1.1.2",
     "xml-encryption": "^0.11.0",
     "xml2js": "0.4.x",
-    "xmlbuilder": "^9.0.4",
+    "xmlbuilder": "^15.1.0",
     "xmldom": "0.1.x"
   },
   "devDependencies": {
