@@ -34,7 +34,7 @@
     "xml-encryption": "^1.2.1",
     "xml2js": "0.4.x",
     "xmlbuilder": "^15.1.1",
-    "xmldom": "0.1.x"
+    "xmldom": "0.4.x"
   },
   "devDependencies": {
     "body-parser": "^1.17.1",
