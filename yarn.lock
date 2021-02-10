@@ -1145,9 +1145,9 @@ xml-crypto@^2.0.0:
     xpath "0.0.27"
 
 xml-encryption@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/xml-encryption/-/xml-encryption-1.2.1.tgz#e6d18817c4309fd07ca7793cca93c3fd06745baa"
-  integrity sha512-hn5w3l5p2+nGjlmM0CAhMChDzVGhW+M37jH35Z+GJIipXbn9PUlAIRZ6I5Wm7ynlqZjFrMAr83d/CIp9VZJMTA==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/xml-encryption/-/xml-encryption-1.2.2.tgz#352f2d133ae697977894f54bd75e65150657a869"
+  integrity sha512-s0Fax5BpCZqLzYGtlmilUoi/kyhj8dHqaMOvTAQLifkDS4QVfIuBqhEj9POtk3YbZ0tSxp/hvbGj3iCOM1ej8w==
   dependencies:
     escape-html "^1.0.3"
     node-forge "^0.10.0"
