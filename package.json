@@ -44,7 +44,7 @@
     "passport": "0.4.x",
     "request": "^2.83.0",
     "should": "*",
-    "sinon": "^10.0.1"
+    "sinon": "^11.0.0"
   },
   "engines": {
     "node": ">= 6"
