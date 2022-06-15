@@ -16,7 +16,7 @@ import { CapturedCheck, FAKE_CERT, SamlCheck } from "./types";
 const capturedSamlRequestChecks: SamlCheck[] = [
   {
     name: "Empty Config",
-    config: { cert: FAKE_CERT },
+    config: { cert: FAKE_CERT, issuer: "onelogin_saml" },
     result: {
       "samlp:AuthnRequest": {
         $: {
@@ -54,7 +54,7 @@ const capturedSamlRequestChecks: SamlCheck[] = [
   },
   {
     name: "Empty Config w/ HTTP-POST binding",
-    config: { authnRequestBinding: "HTTP-POST", cert: FAKE_CERT },
+    config: { authnRequestBinding: "HTTP-POST", cert: FAKE_CERT, issuer: "onelogin_saml" },
     result: {
       "samlp:AuthnRequest": {
         $: {
@@ -390,6 +390,7 @@ const capturedSamlRequestChecks: SamlCheck[] = [
       disableRequestedAuthnContext: true,
       disableRequestAcsUrl: true,
       cert: FAKE_CERT,
+      issuer: "onelogin_saml",
     },
     result: {
       "samlp:AuthnRequest": {
@@ -869,6 +870,7 @@ export const logoutChecks: CapturedCheck[] = [
       entryPoint: "https://idp.testshib.org/idp/profile/SAML2/Redirect/SSO",
       cert: fs.readFileSync(__dirname + "/static/cert.pem", "ascii"),
       identifierFormat: "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+      issuer: "onelogin_saml",
     },
     samlRequest: {
       SAMLRequest: fs.readFileSync(

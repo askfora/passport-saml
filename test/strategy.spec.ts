@@ -50,6 +50,7 @@ describe("strategy#authorize", function () {
       {
         authnRequestBinding: "HTTP-POST",
         cert: FAKE_CERT,
+        issuer: "http://foo.issuer",
       },
       noop,
       noop
@@ -66,7 +67,7 @@ describe("strategy#authorize", function () {
   });
 
   it("calls getAuthorizeUrl when authnRequestBinding is not HTTP-POST", function (done) {
-    const strategy = new SamlStrategy({ cert: FAKE_CERT }, noop, noop);
+    const strategy = new SamlStrategy({ cert: FAKE_CERT, issuer: "http://foo.issuer" }, noop, noop);
 
     // This returns immediately, but calls async functions; need to turn event loop
     strategy.authenticate(requestWithUser, {});
@@ -81,7 +82,7 @@ describe("strategy#authorize", function () {
 
   it("determines that logout was unsuccessful where user doesn't match", function (done) {
     const strategy = new SamlStrategy(
-      { cert: FAKE_CERT },
+      { cert: FAKE_CERT, issuer: "http://foo.issuer" },
       function (_profile: Profile | null, done: VerifiedCallback) {
         // for signon
         if (_profile) {
@@ -131,7 +132,7 @@ describe("strategy#authorize", function () {
 
   it("determines that logout was successful where user matches", function (done) {
     const strategy = new SamlStrategy(
-      { cert: FAKE_CERT },
+      { cert: FAKE_CERT, issuer: "http://foo.issuer" },
       function (_profile: Profile | null, done: VerifiedCallback) {
         // for signon
         if (_profile) {
