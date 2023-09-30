@@ -26,13 +26,13 @@ export interface RequestWithUser extends express.Request {
 export type VerifiedCallback = (
   err: Error | null,
   user?: Record<string, unknown>,
-  info?: Record<string, unknown>
+  info?: Record<string, unknown>,
 ) => void;
 
 export type VerifyWithRequest = (
   req: express.Request,
   profile: Profile | null,
-  done: VerifiedCallback
+  done: VerifiedCallback,
 ) => void;
 
 export type VerifyWithoutRequest = (profile: Profile | null, done: VerifiedCallback) => void;
@@ -46,7 +46,10 @@ interface BaseMultiStrategyConfig {
 export type MultiStrategyConfig = Partial<SamlConfig> & StrategyOptions & BaseMultiStrategyConfig;
 
 export class ErrorWithXmlStatus extends Error {
-  constructor(message: string, public readonly xmlStatus: string) {
+  constructor(
+    message: string,
+    public readonly xmlStatus: string,
+  ) {
     super(message);
   }
 }

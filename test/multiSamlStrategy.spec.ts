@@ -54,7 +54,7 @@ describe("MultiSamlStrategy#authenticate", function () {
         getSamlOptions,
       },
       noop,
-      noop
+      noop,
     );
     strategy.authenticate("random" as any, "random" as any);
   });
@@ -96,7 +96,7 @@ describe("MultiSamlStrategy#authenticate", function () {
         fn(null, samlOptions);
         sinon.assert.calledOnce(superAuthenticateStub);
         superAuthenticateStub.calledWith(
-          Object.assign({}, { cacheProvider: "mock cache provider" }, samlOptions)
+          Object.assign({}, { cacheProvider: "mock cache provider" }, samlOptions),
         );
         done();
       } catch (err2) {
@@ -107,7 +107,7 @@ describe("MultiSamlStrategy#authenticate", function () {
     const strategy = new MultiSamlStrategy(
       { getSamlOptions, cacheProvider: "mock cache provider" as any },
       noop,
-      noop
+      noop,
     );
     strategy.authenticate("random" as any, "random" as any);
   });

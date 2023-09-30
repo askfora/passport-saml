@@ -234,7 +234,7 @@ app.post(
   }),
   function (req, res) {
     res.redirect("/");
-  }
+  },
 );
 ```
 
@@ -248,7 +248,7 @@ app.get(
   passport.authenticate("saml", { failureRedirect: "/", failureFlash: true }),
   function (req, res) {
     res.redirect("/");
-  }
+  },
 );
 ```
 
@@ -262,7 +262,7 @@ app.get(
   }),
   function (req, res) {
     res.redirect("/");
-  }
+  },
 );
 ```
 

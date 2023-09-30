@@ -53,7 +53,7 @@ describe("strategy#authorize", function () {
         issuer: "http://foo.issuer",
       },
       noop,
-      noop
+      noop,
     );
 
     // This returns immediately, but calls async functions; need to turn event loop
@@ -94,7 +94,7 @@ describe("strategy#authorize", function () {
         if (_profile) {
           done(null, { name: _profile.nameID });
         }
-      }
+      },
     );
 
     validatePostResponseAsync.resolves({
@@ -124,7 +124,7 @@ describe("strategy#authorize", function () {
         sinon.match.any,
         sinon.match.any,
         false,
-        sinon.match.func
+        sinon.match.func,
       );
       done();
     });
@@ -144,7 +144,7 @@ describe("strategy#authorize", function () {
         if (_profile) {
           done(null, { name: _profile.nameID });
         }
-      }
+      },
     );
 
     validatePostResponseAsync.resolves({
@@ -174,7 +174,7 @@ describe("strategy#authorize", function () {
         sinon.match.any,
         sinon.match.any,
         true,
-        sinon.match.func
+        sinon.match.func,
       );
       done();
     });

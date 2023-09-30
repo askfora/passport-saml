@@ -133,8 +133,8 @@ describe("captured saml responses /", function () {
               profile = _profile;
               done(null, { id: profile.nameID });
             }
-          }
-        )
+          },
+        ),
       );
 
       let userSerialized = false;
@@ -153,7 +153,7 @@ describe("captured saml responses /", function () {
         err: Error,
         _req: express.Request,
         res: express.Response,
-        _next: express.NextFunction
+        _next: express.NextFunction,
       ) {
         res.status(500).send(err.stack);
       });
@@ -207,8 +207,8 @@ describe("captured saml responses /", function () {
               passedRequest = req;
               done(null, { id: _profile!.nameID });
             }
-          }
-        )
+          },
+        ),
       );
       pp.serializeUser(function (user, done) {
         done(null, user);
@@ -221,7 +221,7 @@ describe("captured saml responses /", function () {
         err: Error | null,
         req: express.Request,
         res: express.Response,
-        next: express.NextFunction
+        next: express.NextFunction,
       ) {
         // console.log( err.stack );
         res.status(500).send("500 Internal Server Error");

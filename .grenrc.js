@@ -44,12 +44,12 @@ module.exports = {
       let placeholdersDate = new Date(
         Number(dateParts[2]),
         Number(dateParts[1]) - 1,
-        Number(dateParts[0])
+        Number(dateParts[0]),
       );
       let isoDateString = placeholdersDate.toISOString().split("T")[0];
       placeholders.body = placeholders.body.replace(
         "*No changelog for this release.*",
-        "\n_No changelog for this release._"
+        "\n_No changelog for this release._",
       );
       return `## ${placeholders.release} (${isoDateString})\n${placeholders.body}`;
     },

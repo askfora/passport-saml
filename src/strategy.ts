@@ -22,12 +22,12 @@ export abstract class AbstractStrategy extends PassportStrategy {
   constructor(
     options: SamlConfig,
     signonVerify: VerifyWithRequest,
-    logoutVerify: VerifyWithRequest
+    logoutVerify: VerifyWithRequest,
   );
   constructor(
     options: SamlConfig,
     signonVerify: VerifyWithoutRequest,
-    logoutVerify: VerifyWithoutRequest
+    logoutVerify: VerifyWithoutRequest,
   );
   constructor(options: SamlConfig, signonVerify: never, logoutVerify: never) {
     super();
@@ -91,7 +91,7 @@ export abstract class AbstractStrategy extends PassportStrategy {
             const RelayState = req.query?.RelayState || req.body?.RelayState;
             if (this._saml == null) {
               return this.error(
-                new Error("Can't get logout response URL without a SAML provider defined.")
+                new Error("Can't get logout response URL without a SAML provider defined."),
               );
             } else {
               this._saml.getLogoutResponseUrl(
@@ -99,7 +99,7 @@ export abstract class AbstractStrategy extends PassportStrategy {
                 RelayState,
                 options,
                 userMatch,
-                redirectIfSuccess
+                redirectIfSuccess,
               );
             }
 
@@ -195,7 +195,7 @@ export abstract class AbstractStrategy extends PassportStrategy {
             const RelayState =
               (req.query && req.query.RelayState) || (req.body && req.body.RelayState);
             this.redirect(
-              await this._saml.getLogoutUrlAsync(req.user as Profile, RelayState, options)
+              await this._saml.getLogoutUrlAsync(req.user as Profile, RelayState, options),
             );
           } catch (err) {
             this.error(err as Error);
@@ -224,7 +224,7 @@ export abstract class AbstractStrategy extends PassportStrategy {
 
   protected _generateServiceProviderMetadata(
     decryptionCert: string | null,
-    signingCert?: string | string[] | null
+    signingCert?: string | string[] | null,
   ): string {
     if (this._saml == null) {
       throw new Error("Can't generate service provider metadata without a SAML provider defined.");
@@ -247,7 +247,7 @@ export class Strategy extends AbstractStrategy {
 
   generateServiceProviderMetadata(
     decryptionCert: string | null,
-    signingCert?: string | string[] | null
+    signingCert?: string | string[] | null,
   ): string {
     return this._generateServiceProviderMetadata(decryptionCert, signingCert);
   }

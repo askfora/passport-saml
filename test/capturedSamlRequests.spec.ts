@@ -875,7 +875,7 @@ export const logoutChecks: CapturedCheck[] = [
     samlRequest: {
       SAMLRequest: fs.readFileSync(
         __dirname + "/static/logout_request_with_good_signature.xml",
-        "base64"
+        "base64",
       ),
     },
     expectedStatusCode: 200,
@@ -939,7 +939,7 @@ describe("captured SAML requests /", function () {
               profile = _profile;
               done(null, profile);
             }
-          }
+          },
         );
         passport.use(strategy);
 
@@ -960,14 +960,14 @@ describe("captured SAML requests /", function () {
         } as AuthenticateOptions),
         function (req, res) {
           res.status(200).send("200 OK");
-        }
+        },
       );
 
       app.use(function (
         err: Error | null,
         req: express.Request,
         res: express.Response,
-        next: express.NextFunction
+        next: express.NextFunction,
       ) {
         if (err) {
           done(err);
@@ -1052,7 +1052,7 @@ describe("captured SAML requests /", function () {
             profile = _profile;
             done(null, profile);
           }
-        }
+        },
       );
 
       passport.use(strategy);
@@ -1065,7 +1065,7 @@ describe("captured SAML requests /", function () {
         err: Error,
         req: express.Request,
         res: express.Response,
-        next: express.NextFunction
+        next: express.NextFunction,
       ) {
         if (err) {
           done(err);

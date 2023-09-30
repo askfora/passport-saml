@@ -64,8 +64,8 @@ passport.use(
         // e.g. if you added a Group claim
         group: profile["http://schemas.xmlsoap.org/claims/Group"],
       });
-    }
-  )
+    },
+  ),
 );
 
 module.exports = passport;

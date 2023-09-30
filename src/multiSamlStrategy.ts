@@ -16,12 +16,12 @@ export class MultiSamlStrategy extends AbstractStrategy {
   constructor(
     options: MultiStrategyConfig,
     signonVerify: VerifyWithRequest,
-    logoutVerify: VerifyWithRequest
+    logoutVerify: VerifyWithRequest,
   );
   constructor(
     options: MultiStrategyConfig,
     signonVerify: VerifyWithoutRequest,
-    logoutVerify: VerifyWithoutRequest
+    logoutVerify: VerifyWithoutRequest,
   );
   constructor(options: MultiStrategyConfig, signonVerify: never, logoutVerify: never) {
     if (!options || typeof options.getSamlOptions !== "function") {
@@ -54,7 +54,7 @@ export class MultiSamlStrategy extends AbstractStrategy {
 
   logout(
     req: RequestWithUser,
-    callback: (err: Error | null, url?: string | null | undefined) => void
+    callback: (err: Error | null, url?: string | null | undefined) => void,
   ): void {
     this._options.getSamlOptions(req, (err, samlOptions) => {
       if (err) {
@@ -72,7 +72,7 @@ export class MultiSamlStrategy extends AbstractStrategy {
     req: Request,
     decryptionCert: string | null,
     signingCert: string | string[] | null,
-    callback: (err: Error | null, metadata?: string) => void
+    callback: (err: Error | null, metadata?: string) => void,
   ): void {
     if (typeof callback !== "function") {
       throw new Error("Metadata can't be provided synchronously for MultiSamlStrategy.");
@@ -88,7 +88,7 @@ export class MultiSamlStrategy extends AbstractStrategy {
       Object.setPrototypeOf(strategy, this);
       return callback(
         null,
-        this._generateServiceProviderMetadata.call(strategy, decryptionCert, signingCert)
+        this._generateServiceProviderMetadata.call(strategy, decryptionCert, signingCert),
       );
     });
   }
