@@ -75,7 +75,7 @@
     "express": "^4.18.1",
     "mocha": "^10.0.0",
     "onchange": "^7.1.0",
-    "passport": "0.5.3",
+    "passport": "0.7.0",
     "prettier": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.17",
     "release-it": "^17.0.0",
