@@ -3,7 +3,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as passport from "passport";
 import { Profile, Strategy as SamlStrategy } from "../src";
-import request = require("request");
+import request from "request";
 import * as zlib from "zlib";
 import * as querystring from "querystring";
 import { parseString } from "xml2js";
