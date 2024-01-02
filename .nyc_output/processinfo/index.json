@@ -1,1 +1,13 @@
-{"processes":{"2003a08a-5441-4590-bf23-f08f37e74505":{"parent":null,"children":[]}},"files":{"/home/otrajman/Workspace/passport-saml/src/index.ts":["2003a08a-5441-4590-bf23-f08f37e74505"],"/home/otrajman/Workspace/passport-saml/src/strategy.ts":["2003a08a-5441-4590-bf23-f08f37e74505"],"/home/otrajman/Workspace/passport-saml/src/multiSamlStrategy.ts":["2003a08a-5441-4590-bf23-f08f37e74505"]},"externalIds":{}}
+{
+  "processes": { "2003a08a-5441-4590-bf23-f08f37e74505": { "parent": null, "children": [] } },
+  "files": {
+    "/home/otrajman/Workspace/passport-saml/src/index.ts": ["2003a08a-5441-4590-bf23-f08f37e74505"],
+    "/home/otrajman/Workspace/passport-saml/src/strategy.ts": [
+      "2003a08a-5441-4590-bf23-f08f37e74505"
+    ],
+    "/home/otrajman/Workspace/passport-saml/src/multiSamlStrategy.ts": [
+      "2003a08a-5441-4590-bf23-f08f37e74505"
+    ]
+  },
+  "externalIds": {}
+}
