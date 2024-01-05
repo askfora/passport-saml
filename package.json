@@ -2,7 +2,6 @@
   "name": "passport-saml",
   "version": "3.1.0",
   "description": "SAML 2.0 authentication strategy for Passport",
-  "type": "module",
   "keywords": [
     "saml",
     "adfs",
@@ -34,18 +33,20 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "changelog": "gren changelog --override --generate",
     "lint": "eslint --ext .ts \"**/*.ts\" --cache",
     "lint-watch": "onchange -k -p 100 \"**/*.ts\" -- eslint {{file}}",
     "lint:fix": "eslint --ext .ts --fix src",
+    "prepare": "tsc",
     "prettier-check": "prettier --config .prettierrc.json --check .",
     "prettier-format": "prettier --config .prettierrc.json --write .",
     "prettier-watch": "onchange -k -p 100 \".\" -- prettier --config .prettierrc.json --write {{file}}",
     "release": "release-it",
-    "test": "npm run prettier-check && npm run lint && npx tsc && mocha",
+    "test": "npm run prettier-check && npm run lint && npm run tsc && mocha",
     "test-watch": "mocha --watch",
-    "tsc-watch": "npx tsc --watch",
+    "tsc": "tsc",
+    "tsc-watch": "tsc --watch",
     "watch": "concurrently --kill-others \"npm:*-watch\""
   },
   "dependencies": {
@@ -80,8 +81,8 @@
     "release-it": "^17.0.0",
     "request": "^2.83.0",
     "sinon": "^17.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^5.0.2",
     "xml2js": "^0.6.0"
   },
   "engines": {
