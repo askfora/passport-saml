@@ -64,7 +64,7 @@
     "@types/sinon": "^17.0.0",
     "@types/xml2js": "^0.4.8",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
+    "@typescript-eslint/parser": "^7.0.1",
     "body-parser": "^1.19.2",
     "chai": "^5.0.0",
     "choma": "^1.2.1",
