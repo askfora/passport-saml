@@ -78,7 +78,7 @@
     "passport": "0.7.0",
     "prettier": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.17",
-    "release-it": "^18.0.0",
+    "release-it": "^19.0.1",
     "request": "^2.83.0",
     "sinon": "^20.0.0",
     "ts-node": "^10.7.0",
